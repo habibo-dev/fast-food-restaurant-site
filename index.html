@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Order hot burgers, pizza, tacos, sandwiches, and drinks from FlameBite. Fast delivery, fresh ingredients, and limited-time combo offers.">
+  <meta name="theme-color" content="#e30613">
+  <meta property="og:title" content="FlameBite - Hot & Fresh in Minutes">
+  <meta property="og:description" content="Premium fast food ordering website with online cart, WhatsApp orders, click-to-call, reviews, offers, and location.">
+  <meta property="og:type" content="website">
+  <title>FlameBite | Hot & Fresh Fast Food</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://www.google.com">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="loader" id="loader" aria-hidden="true">
+    <span></span>
+  </div>
+
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Go to homepage">
+        <span class="brand-mark">F</span>
+        <span data-restaurant-name>FlameBite</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#menu">Menu</a>
+        <a href="#offers">Deals</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#location">Location</a>
+        <button class="icon-button theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-reveal">
+      <div class="hero-content">
+        <p class="eyebrow" id="heroEyebrow">Limited Time Offer</p>
+        <h1><span data-restaurant-name>FlameBite</span></h1>
+        <p class="hero-slogan" id="heroSlogan">Hot & Fresh in Minutes</p>
+        <p class="hero-copy" id="heroCopy">Juicy burgers, loaded pizzas, crispy tacos, and ice-cold drinks made for cravings that cannot wait.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#menu">Order Now</a>
+          <a class="btn btn-secondary" href="#menu">View Menu</a>
+          <a class="btn btn-whatsapp" id="heroWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div class="trust-strip" aria-label="Restaurant highlights">
+          <span>4.9 ★ Rated</span>
+          <span>25 min delivery</span>
+          <span>Fresh daily</span>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img id="heroImage" src="" alt="Featured fast food meal" fetchpriority="high">
+        <div class="hero-deal">
+          <strong id="heroDeal">Combo -20%</strong>
+          <span>Today only</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-order section-reveal" aria-label="Quick order options">
+      <a href="#menu">
+        <strong>Online order</strong>
+        <span>Build a cart in seconds</span>
+      </a>
+      <a id="quickWhatsapp" href="#" target="_blank" rel="noopener">
+        <strong>WhatsApp order</strong>
+        <span>Send your order instantly</span>
+      </a>
+      <a id="quickCall" href="#">
+        <strong>Call now</strong>
+        <span id="quickPhone">Tap to call</span>
+      </a>
+    </section>
+
+    <section class="section section-reveal" id="menu">
+      <div class="section-heading">
+        <p class="eyebrow">Fresh Menu</p>
+        <h2>Choose your craving</h2>
+        <p>Popular items are marked so hungry visitors can decide faster.</p>
+      </div>
+      <div class="category-tabs" id="categoryTabs" role="tablist" aria-label="Menu categories"></div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <section class="offers section-reveal" id="offers">
+      <div class="section-heading">
+        <p class="eyebrow">Limited Time Offer</p>
+        <h2>Deals that sell themselves</h2>
+      </div>
+      <div class="offer-grid" id="offerGrid"></div>
+    </section>
+
+    <section class="section section-reveal" id="why">
+      <div class="section-heading">
+        <p class="eyebrow">Why Choose Us</p>
+        <h2>Fast food, done right</h2>
+      </div>
+      <div class="benefit-grid" id="benefitGrid"></div>
+    </section>
+
+    <section class="reviews section-reveal" id="reviews">
+      <div class="section-heading">
+        <p class="eyebrow">Customer Reviews</p>
+        <h2>Social proof at first bite</h2>
+      </div>
+      <div class="review-grid" id="reviewGrid"></div>
+    </section>
+
+    <section class="location section-reveal" id="location">
+      <div class="location-card">
+        <div>
+          <p class="eyebrow">Visit Us</p>
+          <h2 id="locationTitle">Find us nearby</h2>
+          <p id="address"></p>
+          <p><strong>Phone:</strong> <a id="phoneLink" href="#"></a></p>
+          <p><strong>Opening hours:</strong> <span id="hours"></span></p>
+          <div class="location-actions">
+            <a class="btn btn-primary" id="directionsLink" href="#" target="_blank" rel="noopener">Get Directions</a>
+            <a class="btn btn-secondary" id="locationWhatsapp" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+          </div>
+        </div>
+        <iframe id="mapFrame" title="Restaurant location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-panel">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">Your Order</p>
+          <h2>Checkout</h2>
+        </div>
+        <button class="icon-button" id="closeCart" type="button" aria-label="Close cart">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <label class="field">
+        <span>Your name</span>
+        <input id="customerName" type="text" autocomplete="name" placeholder="Alex">
+      </label>
+      <label class="field">
+        <span>Pickup or delivery note</span>
+        <textarea id="orderNote" rows="3" placeholder="Pickup at 8:30 PM, no onions..."></textarea>
+      </label>
+      <button class="btn btn-primary btn-full" id="checkoutWhatsapp" type="button">Send Order on WhatsApp</button>
+      <a class="btn btn-secondary btn-full" id="checkoutCall" href="#">Call Restaurant</a>
+    </div>
+  </aside>
+
+  <button class="sticky-order" id="openCart" type="button" aria-label="Open cart">
+    <span>Order Now</span>
+    <strong id="cartCount">0</strong>
+  </button>
+  <a class="float-whatsapp" id="floatWhatsapp" href="#" target="_blank" rel="noopener" aria-label="Order on WhatsApp">WA</a>
+  <a class="float-call" id="floatCall" href="#" aria-label="Call restaurant">Call</a>
+
+  <footer class="footer">
+    <div>
+      <strong data-restaurant-name>FlameBite</strong>
+      <p id="footerText">Hot food. Fast service. Big flavor.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#menu">Menu</a>
+      <a href="#offers">Deals</a>
+      <a href="#location">Contact</a>
+      <a id="instagramLink" href="#" target="_blank" rel="noopener">Instagram</a>
+      <a id="facebookLink" href="#" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
